@@ -1,7 +1,6 @@
-﻿﻿#include <iostream>
-#include <iomanip> 
+﻿#include <iostream>
+#include <iomanip>
 #include <cmath>
-
 
 using namespace std;
 
@@ -29,9 +28,11 @@ void pz2()
 
         if (number <= 0) {
             cout << "Please enter a natural number." << endl;
+            i--;
         }
-
-        product *= number;
+        else {
+            product *= number;
+        }
     }
 
     cout << "Product of the entered numbers: " << product << endl;
@@ -59,13 +60,12 @@ void pz3()
     for (double x = a; x <= b; x += h) {
         double y = f(x);
 
-
-        if (y != y) {
+        if (std::isnan(y)) {
             cout << "Number x = " << x << " is not within the function" << endl;
-            break;
         }
-
-        cout << setw(8) << fixed << setprecision(2) << x << " : " << setw(8) << fixed << setprecision(2) << y << endl;
+        else {
+            cout << setw(8) << fixed << setprecision(2) << x << " : " << setw(8) << fixed << setprecision(2) << y << endl;
+        }
     }
 
     cout << "-------------------" << endl;
